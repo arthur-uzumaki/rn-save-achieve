@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { Pressable, type PressableProps, Text } from 'react-native'
 import { currencyFormat } from '~/utils/currency-format'
 
-interface TransactionProps {
+export interface TransactionProps {
   date: string
   amount: number
 }
