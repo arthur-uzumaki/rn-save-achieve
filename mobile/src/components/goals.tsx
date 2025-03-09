@@ -19,12 +19,14 @@ interface Props {
 export function Goals({ goals, onAdd, onPress }: Props) {
   return (
     <ScrollView
+      testID="goals-list"
       className="max-h-44 w-full"
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerClassName="gap-4"
     >
       <TouchableOpacity
+        testID="add-button"
         className="max-h-44 w-16 items-center justify-center rounded-lg bg-green-500"
         onPress={onAdd}
       >
@@ -32,7 +34,12 @@ export function Goals({ goals, onAdd, onPress }: Props) {
       </TouchableOpacity>
 
       {goals.map(goal => (
-        <Goal key={goal.id} goal={goal} onPress={() => onPress(goal.id)} />
+        <Goal
+          testID={`goal-${goal.id}`}
+          key={goal.id}
+          goal={goal}
+          onPress={() => onPress(goal.id)}
+        />
       ))}
     </ScrollView>
   )
