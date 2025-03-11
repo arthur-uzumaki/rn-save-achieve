@@ -2,10 +2,6 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { fireEvent, render, screen } from '@testing-library/react-native'
 import { Goals, type GoalsProps } from './goals'
 
-jest.mock('@expo/vector-icons', () => ({
-  MaterialIcons: jest.fn(() => null),
-}))
-
 const goals: GoalsProps[] = [
   {
     id: '1',

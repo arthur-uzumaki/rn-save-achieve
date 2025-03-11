@@ -1,22 +1,22 @@
-import { forwardRef } from 'react'
+import { type ReactNode, forwardRef } from 'react'
 import { Text, View } from 'react-native'
 
 import { MaterialIcons } from '@expo/vector-icons'
-
-import Bottom, { type BottomSheetProps } from '@gorhom/bottom-sheet'
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet'
 
 import { theme } from '~/theme'
 
-export interface Props extends BottomSheetProps {
+export interface Props {
   onClose: VoidFunction
   title: string
   snapPoints: number[]
+  children: ReactNode
 }
 
-export const BottomSheet = forwardRef<Bottom, Props>(
+export const BottomSheetRn = forwardRef<BottomSheet, Props>(
   ({ children, onClose, snapPoints, title }, ref) => {
     return (
-      <Bottom
+      <BottomSheet
         index={0}
         snapPoints={snapPoints}
         backgroundStyle={{
@@ -27,7 +27,7 @@ export const BottomSheet = forwardRef<Bottom, Props>(
         handleComponent={() => null}
         ref={ref}
       >
-        <View className="gap-4 p-8">
+        <BottomSheetView className="gap-4 p-8">
           <View className="flex-row">
             <Text className="flex-1 font-medium text-base text-white">
               {title}
@@ -41,8 +41,8 @@ export const BottomSheet = forwardRef<Bottom, Props>(
             />
           </View>
           {children}
-        </View>
-      </Bottom>
+        </BottomSheetView>
+      </BottomSheet>
     )
   }
 )

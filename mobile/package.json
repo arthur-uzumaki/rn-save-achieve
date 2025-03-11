@@ -15,6 +15,14 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
     ],
+    "testPathIgnorePatterns": [
+      "./tests/mocks",
+      "./tests/utils"
+    ],
+    "setupFiles": [
+      "./tests/mocks/lib/react-native-safe-area-context.js",
+      "./tests/mocks/lib/expo-vector-icons.js"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.svg$": "jest-transformer-svg"
