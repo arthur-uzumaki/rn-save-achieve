@@ -2,9 +2,6 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { render, screen } from '@testing-library/react-native'
 import { TransactionType } from './transaction-type'
 
-jest.mock('@expo/vector-icons', () => ({
-  MaterialIcons: jest.fn(() => null),
-}))
 describe('Component: TransactionType', () => {
   it('should be render with transaction type', () => {
     render(
