@@ -1,6 +1,9 @@
 import '~/styles/global.css'
+import '~/lib/dayjs'
+
 import { Slot } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
+import Toast from 'react-native-toast-message'
 
 import {
   Roboto_400Regular,
@@ -35,6 +38,7 @@ export default function RootLayout() {
     >
       <Slot />
       <StatusBar style="light" backgroundColor="transparent" />
+      <Toast />
     </GestureHandlerRootView>
   )
 }
