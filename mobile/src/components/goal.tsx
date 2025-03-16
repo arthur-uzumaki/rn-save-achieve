@@ -30,7 +30,7 @@ export function Goal({ goal, ...rest }: Props) {
         {currencyFormat(goal.total)}
       </Text>
 
-      <Progress progress={progress} />
+      <Progress percentage={progress} />
     </TouchableOpacity>
   )
 }
