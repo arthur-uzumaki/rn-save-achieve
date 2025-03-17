@@ -17,6 +17,9 @@ export const BottomSheetRn = forwardRef<BottomSheet, Props>(
   ({ children, onClose, snapPoints, title }, ref) => {
     return (
       <BottomSheet
+        animationConfigs={{
+          damping: 8,
+        }}
         index={0}
         snapPoints={snapPoints}
         backgroundStyle={{
