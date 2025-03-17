@@ -30,6 +30,13 @@ export default function Index() {
 
   async function handleCreate() {
     try {
+      if (!name.trim() || !total.trim()) {
+        return Toast.show({
+          type: 'info',
+          text1: 'Colocar todos os campos.',
+        })
+      }
+
       const totalAsNumber = Number(total.toString().replace(',', '.'))
 
       if (Number.isNaN(totalAsNumber)) {
@@ -76,6 +83,8 @@ export default function Index() {
   async function fetchTransactions() {
     try {
       const response = mocks.transactions
+      console.log({ response })
+
       setTransactions(
         response.map(item => ({
           ...item,

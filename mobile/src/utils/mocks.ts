@@ -4,12 +4,12 @@ import { currencyFormat } from './currency-format'
 const transactions = [
   {
     id: '1',
-    created_at: dayjs(new Date()).format('DD/MM/YYYY [às] HH:mm'),
+    created_at: dayjs(new Date().toISOString()).format('DD/MM/YYYY [às] HH:mm'),
     amount: 100,
   },
   {
     id: '2',
-    created_at: dayjs(new Date()).format('DD/MM/YYYY [às] HH:mm'),
+    created_at: dayjs(new Date().toISOString()).format('DD/MM/YYYY [às] HH:mm'),
     amount: -90,
   },
 ]
